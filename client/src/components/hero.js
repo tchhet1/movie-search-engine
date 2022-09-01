@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import './hero.css';
+import Movies from './movies';
 
 
 function Hero(){
@@ -8,6 +9,7 @@ function Hero(){
     const [data, setData] = useState([]);
     
     const url = `https://api.themoviedb.org/3/search/movie/?api_key=29c6212e49ed62a5bd8f2c72cd239af9&query=${input}`;
+    const posterUrl = 'https://image.tmdb.org/t/p/original';
 
     
 
@@ -43,27 +45,32 @@ function Hero(){
         </div>
             
       </section>
-      
+
+      <div>
+        { data.length ? `Results: ${data.length}` : "No Results" }
+      </div>
+      <div class="movies-container">
+        
       {
         data.map((movie) => {
             return (
-              <div className="movie-data-container">
-                <div className="movie-title">
-                    <h3> { movie.title }  </h3><br /> 
-                    Release Date: { movie.release_date }
-                </div>
-                <div className="movie-overview">
-                    { movie.overview }
-                </div>
-                <div className="movie-year">
-                    
-                </div>
-              </div>
+
+              <Movies  
+                url = { posterUrl }
+                image = { movie.poster_path } 
+                title = { movie.title }
+                releaseDate = { movie.release_date }
+                overview = { movie.overview }
+                ></Movies>
             )
              
             
         })
       } 
+
+      </div>
+      
+    
          
     </div>
      

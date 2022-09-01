@@ -1,0 +1,24 @@
+.movie-data-container {
+    width: 200px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.movie-image {
+    position: relative;
+}
+
+.watchlist {
+    position: absolute;
+    bottom: -12px;
+    width: 100%;
+    padding: 5px;
+    background-color: aquamarine;
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    
+}

@@ -1,33 +1,39 @@
+import React, { useState } from 'react';
+import './movies.css';
+import Watchlist from './watchlist';
 
-function Movies() {
+function Movies(props) {
 
-return (
-    {/* <div>
-        {
-        data.map((movie) => {
-            return (
-              <div className="movie-data-container">
-                <div className="movie-title">
-                    <h3> { movie.title }  </h3><br /> 
-                    Release Date: { movie.release_date }
-                </div>
-                <div className="movie-overview">
-                    { movie.overview }
-                </div>
-                <div className="movie-year">
+    const imageUrl = props.url.concat(props.image);
+
+    
+    return (
+        
+                <div className="movie-data-container">
+                    <div className="movie-image">   
+                       <Watchlist  
+                       image =  { imageUrl } 
+                       title = { props.title }
+                       releaseDate = {  props.releaseDate }
+                       overview = { props.overview }> </Watchlist>
+                        <img src = { imageUrl } width="200px" height="auto" alt= {props.title} />
+                        
+                    </div>
                     
-                </div>
-              </div>
-            )
-             
-            
-        })
-      } 
-    </div> */}
-    
-)
-  
-    
+                    <div className="movie-title">
+                         <b> { props.title } </b>
+                        
+                    </div>
+                    <div className="movie-year">
+                        Release Date: { props.releaseDate }
+                    </div>
+                    <div className="movie-overview">
+                        { props.overview }
+                    </div>
+                    
+                </div>  
+    )
+     
 }
 
 export default Movies;
