@@ -9,14 +9,21 @@ function Watchlist(props) {
         console.log(e.target);
 
         Axios.post('http://localhost:3001/create', {
-            image: props.image,
+            movieID: parseInt(props.movieID),
+            imageUrl: props.image,
             title: props.title,
             releaseDate: props.releaseDate,
             overview: props.overview
         })
-        .then(()=>{
-
+        .then((res)=>{
+                console.log(res);
+                //setMovieList([...res])
+                alert("Added to watchlist");
         })
+        .catch((error) => {
+            console.log('err ' + error);
+          });
+      
         
     }
 

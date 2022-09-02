@@ -8,10 +8,10 @@ function Navbar() {
           <div className="logo">Movie Maniac</div>
             <nav>      
               <ul>
-                <li>Home</li>
+                
                 <li>New</li>
                 <li>Popular</li>
-                <li>Watchlist</li>
+                <li><a href="">Watchlist</a></li>
               </ul>
             </nav>
         </div>          

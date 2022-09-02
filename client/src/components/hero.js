@@ -15,7 +15,6 @@ function Hero(){
 
     const inputHandler = ((e) => {
         setInput(e.target.value);
-        console.log(input);
     });
 
     
@@ -27,10 +26,7 @@ function Hero(){
       .then((res) => {
         setData(res.data.results);
         
-      });
-
-
-     
+      }); 
       
     });
 
@@ -40,7 +36,7 @@ function Hero(){
       <div>
       <section className="hero">
         <div>
-            <input type="text" placeholder="Search for movies..."  value= { input }onChange= { inputHandler } />            
+            <input type="text" placeholder="Search for movies..."  value= { input } onChange= { inputHandler } />            
             <button type="submit" onClick= { submitHandler }>Search</button>
         </div>
             
@@ -55,7 +51,12 @@ function Hero(){
         data.map((movie) => {
             return (
 
+              
+
               <Movies  
+                key = {movie.id}
+                movieID = { movie.id.toString() } 
+                adult = { movie.adult }
                 url = { posterUrl }
                 image = { movie.poster_path } 
                 title = { movie.title }
