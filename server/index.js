@@ -1,4 +1,3 @@
-//start working form here tomorrow*******************************
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
@@ -28,9 +27,9 @@ db.connect(function(err) {
   });
    
 
-/* app.get("/contacts", (req, res) => {
+app.get("/movies", (req, res) => {
     
-    db.query("SELECT * FROM contacts",  (err, result) => {
+    db.query("SELECT * FROM movies",  (err, result) => {
         if (err) {
             console.log(err);
         } else {
@@ -40,7 +39,7 @@ db.connect(function(err) {
       });
 
   });
- */
+
 
 app.post('/create', (req, res) => {
     console.log(req.body);
