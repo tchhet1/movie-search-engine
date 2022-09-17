@@ -1,4 +1,9 @@
-.movies-container {
+.watchlisted-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.watchlisted-movies-container {
     display: flex;
     justify-content: start;
     flex-wrap: wrap;

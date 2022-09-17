@@ -1,6 +1,7 @@
 import react, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './watchlisted.css';
+import RemoveWatchlisted from '../components/removeWatchlisted';
 
 function Watchlisted() {
     const[watchlist, setwatchlist] = useState([]);
@@ -21,12 +22,15 @@ function Watchlisted() {
             <div className="heading">
                 <p>My Watchlist</p>
             </div>
-            <div className="movies-container">
+            <div className="watchlisted-movies-container">
             {
                 watchlist.map((item) => {
                     return (
                         <div className="movie-data-container">
-                             <div className="movie-image">   
+                             <div className="movie-image"> 
+                             <RemoveWatchlisted
+                             movieID = { item.movieID }> 
+                            </RemoveWatchlisted>  
                                 <img src = { item.imageUrl } width="200px" height="auto" alt= {item.title} />      
                             </div>
                             <div className="movie-title">

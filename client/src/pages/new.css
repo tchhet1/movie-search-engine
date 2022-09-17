@@ -1,0 +1,16 @@
+.new-movies-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.new-movies {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.new-movies .movie {
+    margin-bottom: 30px;
+}
+
+

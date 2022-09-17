@@ -3,7 +3,7 @@ import Navbar from './components/navbar';
 import Movies from './components/movies';
 import MainPage from './pages/index';
 import Popular from './pages/popular';
-import New from './pages/new';
+import NewMovies from './pages/new';
 import Watchlisted from './pages/watchlisted';
 
 import {
@@ -28,7 +28,7 @@ function App() {
       <Routes>
       
             <Route exact path="/" element={<MainPage />} /> 
-            <Route path="/new" element={<New />} />
+            <Route path="/new" element={<NewMovies />} />
             <Route path="/popular" element={<Popular />} />
             <Route path="/watchlisted" element={<Watchlisted />} /> 
            

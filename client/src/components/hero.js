@@ -45,7 +45,7 @@ function Hero(){
       <div>
         { data.length ? `Results: ${data.length}` : "No Results" }
       </div>
-      <div class="movies-container">
+      <div class="movies-container" >
         
       {
         data.map((movie) => {

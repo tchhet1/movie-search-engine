@@ -19,11 +19,16 @@ const db = mysql.createConnection({
 db.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
+
+    
+
     /* var sql = "INSERT INTO contacts (name, email, comment) VALUES ('Test', 'triptichhetri123@gmail.com', 'This is a test')";
     db.query(sql, function (err, result) {
       if (err) throw err;
       console.log("1 record inserted");
     }); */
+
+
   });
    
 
@@ -50,7 +55,7 @@ app.post('/create', (req, res) => {
     const releaseDate = req.body.releaseDate;
     const overview = req.body.overview;
 
-     var sql = "INSERT INTO movies (movieID, imageUrl, title, releaseDate, overview) VALUES ('"+movieID+"', '"+imageUrl+"', '"+title+"', '"+releaseDate+"', '"+overview+"')";
+    let sql = "INSERT INTO movies (movieID, imageUrl, title, releaseDate, overview) VALUES ('"+movieID+"', '"+imageUrl+"', '"+title+"', '"+releaseDate+"', '"+overview+"')";
      //sql = sql.replace('?1', name)
       db.query(sql, function (err, result) {
         if (err) throw err;
@@ -58,6 +63,22 @@ app.post('/create', (req, res) => {
       });
 }); 
 
+app.delete('/', (req, res) => {
+  //console.log(red.body);
+
+  let movieID = req.body.movieID;
+
+  let sql = "DELETE FROM movies WHERE movieID = ?";
+
+  db.query(sql, movieID, (err, result) => {
+          if (err) {
+              console.log(err);
+          } else {
+              console.log("deleted Record: " + result.affectedRows);
+              res.send(result);
+          }
+      });
+}); 
 
 app.listen(3001, () => {
     console.log("server is running");
