@@ -14,8 +14,8 @@ function Movies(props) {
     
     
     return (
-            <div class="test">
-                <div onMouseOver = { handleMouseOver } >
+            <div className="test">
+                
                 <div className="movie-data-container">
                     <div className="movie-image">   
                        <Watchlist 
@@ -40,7 +40,7 @@ function Movies(props) {
                     </div> */}
                     
                 </div> 
-                </div> 
+                 
 
                 {/* {isHovering && (
                 <div class="movie-quickview">

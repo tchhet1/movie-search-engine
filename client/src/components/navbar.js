@@ -5,7 +5,7 @@ function Navbar() {
     return (
      <header>
         <div className="header">
-          <div className="logo"><Link to="/" className="nav-links">Movie Maniac</Link></div>
+          <div className="logo"><Link to="/" className="nav-links">All About Movies</Link></div>
             <nav>      
               <ul>
                 <li><Link to="/" className="nav-links">Home</Link></li>

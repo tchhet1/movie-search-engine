@@ -3,7 +3,7 @@ import Axios from 'axios';
 
 function Watchlist(props) {
 
-    const [movieList, setMovieList] = useState([]);
+    //const [movieList, setMovieList] = useState([]);
 
     const watchlistHandler = (e) => {
         console.log(e.target);
@@ -18,7 +18,7 @@ function Watchlist(props) {
         .then((res)=>{
                 console.log(res);
                 //setMovieList([...res])
-                alert("Added to watchlist");
+                
         })
         .catch((error) => {
             console.log('err ' + error);

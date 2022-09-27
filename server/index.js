@@ -11,7 +11,6 @@ const db = mysql.createConnection({
     user: 'root',
     password: 'chitwan88',
     database: 'watchlist'
-
 });
 
 
@@ -32,6 +31,7 @@ db.connect(function(err) {
   });
    
 
+//getting movies that were watchlisted from the movies database
 app.get("/movies", (req, res) => {
     
     db.query("SELECT * FROM movies",  (err, result) => {
@@ -45,7 +45,7 @@ app.get("/movies", (req, res) => {
 
   });
 
-
+//sends watchlisted movie to the database
 app.post('/create', (req, res) => {
     console.log(req.body);
   
@@ -63,6 +63,26 @@ app.post('/create', (req, res) => {
       });
 }); 
 
+
+//update priority field of watchlisted movies
+app.post('/update', (req, res) => {
+  console.log(req.body);
+
+
+  const priority = req.body.priority;
+  const movieID = req.body.movieID;
+
+  
+  let sql = "UPDATE movies SET Priority = '"+priority+"' WHERE movieID = '"+movieID+"'";
+   //sql = sql.replace('?1', name)
+    db.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log("1 record updated");
+    });
+}); 
+
+
+//deletes movies removed from the watchlist
 app.delete('/', (req, res) => {
   //console.log(red.body);
 

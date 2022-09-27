@@ -10,7 +10,7 @@ function RemoveWatchlisted(props) {
             data: {movieID: props.movieID}
         })
         .then((response) => {
-            alert(`Successfully Deleted.`);
+            alert(`Successfully removed from the watchlist: ${ props.movieName}`);
         })
 
     }
