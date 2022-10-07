@@ -18,7 +18,6 @@ function Watchlisted() {
     
 
     
-    console.log(watchlist);
     return (
         <div className="watchlisted-container">
             <div className="heading">
@@ -43,6 +42,7 @@ function Watchlisted() {
                                 <b> { item.title } </b>     
                             </div>
                             <div className="movie-priority">
+                                Priority: { }
                                 <PrioritySelection
                                 movieID = { item.movieID }>
                                 </PrioritySelection>

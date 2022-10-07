@@ -3,8 +3,9 @@ import Navbar from './components/navbar';
 import Movies from './components/movies';
 import MainPage from './pages/index';
 import Popular from './pages/popular';
-import NewMovies from './pages/new';
+import New from './pages/new';
 import Watchlisted from './pages/watchlisted';
+import Search from './pages/search';
 
 import {
   BrowserRouter,
@@ -28,10 +29,10 @@ function App() {
       <Routes>
       
             <Route exact path="/" element={<MainPage />} /> 
-            <Route path="/new" element={<NewMovies />} />
+            <Route path="/new" element={<New />} />
             <Route path="/popular" element={<Popular />} />
             <Route path="/watchlisted" element={<Watchlisted />} /> 
-           
+           <Route path="/search" element={<Search />} /> 
       </Routes>
     </div>
   );

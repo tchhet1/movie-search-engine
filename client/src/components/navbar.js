@@ -12,7 +12,6 @@ function Navbar() {
                 <li><Link to="/new" className="nav-links">New</Link></li>
                 <li><Link to="/popular" className="nav-links">Popular</Link></li>
                 <li><Link to="/watchlisted" className="nav-links">Watchlist</Link></li>
-                
             </ul>
             </nav>
         </div>          

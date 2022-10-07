@@ -44,10 +44,14 @@
     font-size: 22px;
     padding: 5px;
     background-color: #E6CB3E;
+    cursor: pointer;
   }
 
-  .movies-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+
+
+
+
+
+
+
+ 

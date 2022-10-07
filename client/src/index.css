@@ -1,0 +1,57 @@
+.new-movies-homepage {
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.new-movies {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;  
+    overflow-y: hidden;
+    overflow-x: scroll;  
+}
+.new-movies .movie {
+    margin-bottom: 30px;
+   
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.leftIcon {
+    position: absolute;
+    left: 0;
+    top: 150px;
+    z-index: 1000;
+    background-color: gray;
+    opacity: 0.7;
+    padding: 15px;
+}
+
+.rightIcon {
+    position: absolute;
+    right: 0;
+    top: 150px;
+    z-index: 1000;
+    background-color: gray;
+    opacity: 0.7;
+    padding: 15px;
+
+}
+
+.popular-movies-homepage {
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.popular-movies {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}

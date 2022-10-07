@@ -1,77 +1,64 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
+import { Navigate, useNavigate, useLocation } from 'react-router-dom';
 import './hero.css';
 import Movies from './movies';
+import InputForm from './inputForm'
 
 
 function Hero(){
-    const [input, setInput] = useState('');
-    const [data, setData] = useState([]);
-    
-    const url = `https://api.themoviedb.org/3/search/movie/?api_key=29c6212e49ed62a5bd8f2c72cd239af9&query=${input}`;
-    const posterUrl = 'https://image.tmdb.org/t/p/original';
+   
+  const posterUrl = 'https://image.tmdb.org/t/p/original';
+  const [movieData, setMovieData] = useState([]);
 
-    
 
-    const inputHandler = ((e) => {
-        setInput(e.target.value);
-    });
+  const navigate = useNavigate();
 
-    
+    const submitHandler = (data) => {
+      //e.target.reset();
+      //e.preventDefault();
+      setMovieData(data);
 
-    const submitHandler = ((e) => {
-      e.preventDefault();
-      
-      Axios.get(url)
-      .then((res) => {
-        setData(res.data.results);
-        
-      }); 
-      
-    });
+      navigate("/search",
+        {state:  {movieData: data} }
+      );
+}
 
-   console.log(data);
+      console.log(movieData);
+
+
 
     return (
       <div>
-      <section className="hero">
-        <div>
-            <input type="text" placeholder="Search for movies..."  value= { input } onChange= { inputHandler } />            
-            <button type="submit" onClick= { submitHandler }>Search</button>
-        </div>
-            
-      </section>
-
-      <div>
-        { data.length ? `Results: ${data.length}` : "No Results" }
-      </div>
-      <div class="movies-container" >
-        
-      {
-        data.map((movie) => {
-            return (
-
+        <section className="hero">
+        <InputForm submitHandler = {submitHandler}/>
               
+        </section>
 
-              <Movies  
-                key = {movie.id}
-                movieID = { movie.id.toString() } 
-                adult = { movie.adult }
-                url = { posterUrl }
-                image = { movie.poster_path } 
-                title = { movie.title }
-                releaseDate = { movie.release_date }
-                overview = { movie.overview }
-                ></Movies>
-            )
-             
-            
-        })
-      } 
+        
+        <div class="movies-container" >
+          
+        {
+          movieData.map((movie) => {
+              return (
+                <Movies  
+                  key = {movie.id}
+                  movieID = { movie.id.toString() } 
+                  adult = { movie.adult }
+                  url = { posterUrl }
+                  image = { movie.poster_path } 
+                  title = { movie.title }
+                  releaseDate = { movie.release_date }
+                  overview = { movie.overview }
+                  ></Movies>
+              )
+              
+              
+          })
+        } 
 
-      </div>
+        </div>
+        
       
-    
          
     </div>
      
