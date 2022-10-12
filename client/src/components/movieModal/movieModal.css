@@ -1,5 +1,5 @@
 /* The Modal (background) */
-.modal {
+.movie-modal {
     position: fixed; /* Stay in place */
     z-index: 1000; /* Sit on top */
     left: 0;
@@ -8,24 +8,60 @@
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    
+  }
+
+  .modal {
+    background-color: #fefefe;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 60%; /* Could be more or less, depending on screen size */
   }
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 70%; /* Could be more or less, depending on screen size */
+    
+    display: flex;
+
+  }
+
+  .modal-image {
+      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+      
+  }
+
+  .modal-body {
+    align-self: center;
+  }
+
+  .movie-title {
+      font-size: 20px;
+  }
+  .modal-body .movie-title, .modal-body .movie-releasedate{
+      text-align: center;
+  }
+
+  .movie-overview {
+      width: 90%;
+      margin: 0 auto;
   }
   
   /* The Close Button */
-  .close {
+  .modal-close {
+    display: flex;
+    justify-content: flex-end;
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+  }
+
+  .modal-close button {
+      background-color: transparent;
+      border: none;
+      font-size: 25px;
   }
   
   .close:hover,

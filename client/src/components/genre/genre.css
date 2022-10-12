@@ -1,0 +1,22 @@
+
+.movie-genre ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-top: 0;
+}
+
+.movie-genre ul li {
+    margin-right: 10px;
+}
+
+.movie-genre ul li::after { 
+    content: '|';
+    
+}
+   
+
+.movie-genre ul li:last-child::after{  
+    content: '';
+
+ }

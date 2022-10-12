@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa'
 
 function Navbar() {
     
@@ -12,6 +13,7 @@ function Navbar() {
                 <li><Link to="/new" className="nav-links">New</Link></li>
                 <li><Link to="/popular" className="nav-links">Popular</Link></li>
                 <li><Link to="/watchlisted" className="nav-links">Watchlist</Link></li>
+                <li><Link to="/search" className="nav-links"><FaSearch /></Link></li>
             </ul>
             </nav>
         </div>          
