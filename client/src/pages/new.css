@@ -1,8 +1,9 @@
 .new-movies-container {
     width: 95%;
     margin: 0 auto;
-    padding-top: 50px;
 }
+
+
 
 .new-movies-container .new-movies {
     display: flex;
@@ -15,6 +16,13 @@
     border: 2px solid #3A445C;
     border-radius: 15px;
     padding-bottom: 5px;
+    width: 200px;
+}
+
+.new-movies-container .new-movies .movie:hover {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
 }
 
 .new-movies-container .movie .movie-title {

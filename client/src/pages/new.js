@@ -19,7 +19,6 @@ function New() {
                          
                 <NewMovies></NewMovies>
 
-                
             </div>      
         </div>
     )

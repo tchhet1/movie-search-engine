@@ -9,11 +9,8 @@ body {
 
 header {
     background-color:  #232528;
-    position: fixed;
-    top: 0;
     z-index: 1000;
     width: 100%;
-    margin-bottom: 20px;
 }
 .header {
   display: flex;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Axios  from 'axios';
 import MovieModal from './movieModal/movieModal';
 import MovieHover from './movieHover/movieHover';
+import New from '../pages/new';
 
 //https://api.themoviedb.org/3/movie/latest?api_key=<<api_key>>&language=en-US
 
@@ -21,7 +22,14 @@ function NewMovies() {
 
     const [modalItem, setModalItem] = useState();
 
+    const [distanceTop, setDistanceTop] = useState();
+
+    const [distanceLeft, setDistanceLeft] = useState();
+
+
     
+    
+
 
     if(hover) {
         const movieContainer = document.getElementsByClassName('movie');
@@ -35,35 +43,44 @@ function NewMovies() {
         .then((res) => {
             setNewMovies(res.data.results);
         })
-    },[])
+    },[]);
 
     const toggleHover = () => {
         console.log('test');
     }
  
-   // console.log(hoverItem);
+    const movieElement = document.getElementsByClassName('movie');
+
+   console.log(distanceTop);
     return (
 
-        <div className="new-movies" style={ {position: 'relative', top: 0} }>
+        <div className="new-movies" >
             
         {
-             newMovies.map((movie) => {
+             newMovies.map((movie, index) => {
                  return (
-                <div id="test" >
-                   <div className="movie" onClick = { () =>{
-                       setShow(true);
-                       setModalItem(movie);
-                   }
+                
+                   <div className="movie" 
+                   
+                        onClick = { () =>{
+                            setShow(true);
+                            setModalItem(movie);
+                        }
                      
-                     }  
-                     onMouseEnter={ (e) => {
+                     }
+                     
+                     
+                     onMouseEnter={ () => {
                         setHoverItem(movie);
                         setHover(true);
-                        e.target.style.position = 'relative';
+                        //console.log(movieElement[index]);
+                         setDistanceTop(window.scrollY + movieElement[index].getBoundingClientRect().top - 30);
+                         setDistanceLeft(window.scrollX + + movieElement[index].getBoundingClientRect().left - 30);
                         
-                    } } 
+                    } 
+                } 
      
-                    style={ {position: 'relative', top: 0} }>
+                    >
                        <div className="movie-image">   
                             
                            <img src = { posterUrl.concat(movie.poster_path) } width="200px" height="auto" alt= {movie.title} />
@@ -76,7 +93,7 @@ function NewMovies() {
 
                    
                   
-                </div>
+                
                     
                  )
                 
@@ -104,17 +121,18 @@ function NewMovies() {
 
                         title= { hoverItem.title }
                         releaseDate= { hoverItem.release_date}
+                        genreIds = { hoverItem.genre_ids }
                         image = { posterUrl.concat(hoverItem.poster_path) }
                         overview = { hoverItem.overview }
                         closeHover = { setHover }
+                        hoverTop = { distanceTop }
+                        hoverLeft = { distanceLeft }
                         ></MovieHover>
                     )
 
                     }
 
-
-
-               
+     
          </div>
             
        
