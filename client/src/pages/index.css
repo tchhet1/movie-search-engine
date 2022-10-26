@@ -1,0 +1,11 @@
+.new-movie-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.new-movie-container .new-movie:hover{
+    
+
+}

@@ -12,6 +12,7 @@ function NewMovies() {
     
     
     const posterUrl = 'https://image.tmdb.org/t/p/original';
+
     const [newMovies, setNewMovies] = useState([]); 
     
     const [show, setShow] = useState(false);
@@ -45,13 +46,10 @@ function NewMovies() {
         })
     },[]);
 
-    const toggleHover = () => {
-        console.log('test');
-    }
+    
  
     const movieElement = document.getElementsByClassName('movie');
 
-   console.log(distanceTop);
     return (
 
         <div className="new-movies" >
@@ -62,12 +60,12 @@ function NewMovies() {
                 
                    <div className="movie" 
                    
-                        onClick = { () =>{
-                            setShow(true);
-                            setModalItem(movie);
-                        }
+                    //     onClick = { () =>{
+                    //         setShow(true);
+                    //         setModalItem(movie);
+                    //     }
                      
-                     }
+                    //  }
                      
                      
                      onMouseEnter={ () => {

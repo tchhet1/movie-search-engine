@@ -7,15 +7,23 @@ function Navbar() {
      <header>
         <div className="header">
           <div className="logo"><Link to="/" className="nav-links">All About Movies</Link></div>
-            <nav>      
+            <nav className="nav-items">      
               <ul>
                 <li><Link to="/" className="nav-links">Home</Link></li>
                 <li><Link to="/new" className="nav-links">New</Link></li>
                 <li><Link to="/popular" className="nav-links">Popular</Link></li>
                 <li><Link to="/watchlisted" className="nav-links">Watchlist</Link></li>
-                <li><Link to="/search" className="nav-links"><FaSearch /></Link></li>
-            </ul>
+              </ul> 
+             
+            
             </nav>
+            
+              <ul>
+                <li><Link to="/watchlisted" className="nav-links">Login</Link></li>
+                <li><Link to="/search" className="nav-links"><FaSearch /></Link></li>
+              </ul>
+            
+            
         </div>          
       </header>
     )

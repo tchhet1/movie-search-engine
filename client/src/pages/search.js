@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Axios from 'axios';
+import './search.css';
 import Movies from '../components/movies';
 import InputForm from '../components/inputForm';
 import MovieModal from '../components/movieModal/movieModal';
@@ -48,6 +49,7 @@ function Search() {
              data.map((movie) => {
                  return (
    
+
                    <Movies  
                      key = {movie.id}
                      movieID = { movie.id } 

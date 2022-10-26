@@ -22,21 +22,30 @@ header {
 }
 
 header .logo {
-  flex-grow: 2;
+  flex-grow: 1;
   align-self: center;
   color: #E6CB3E !important;
   font-weight: bold;
   font-size: 20px;
 }
 
-nav {
-  flex-grow: 2;
+.nav-items {
+  flex-grow: 4;
 }
-ul {
+
+ul:first-child {
+  align-self: center;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
   
+}
+
+ul:last-child {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
 }
 
 .nav-links {

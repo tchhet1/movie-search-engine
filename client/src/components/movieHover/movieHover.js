@@ -30,7 +30,7 @@ function MovieHover(props) {
                        overview = { props.overview }> 
             </Watchlist>
             
-                <img src = { props.image } width="260px" height="auto" alt= {props.title} />
+                <img src = { props.image } width="270px" height="auto" alt= {props.title} />
             </div>
 
             <div className="hover-body">
@@ -39,7 +39,6 @@ function MovieHover(props) {
                 <div className="movie-releasedate"><b>Release date:</b> { props.releaseDate }</div>
 
                 <Genre id = { props.genreIds }></Genre>
-                <br />
                 
                 <div className="movie-overview"><b>Overview:</b> { props.overview }</div>
 

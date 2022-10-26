@@ -12,12 +12,9 @@ function Movies(props) {
         setIsHovering(true);
     });
 
-    
-    
+       
     return (
-            <div className="test">
-                
-                
+              
                 <div className="movie-data-container">
                     <div className="movie-image">   
                        <Watchlist 
@@ -43,7 +40,7 @@ function Movies(props) {
                 </div> 
                  
 
-            </div>
+            
     )
      
 }
