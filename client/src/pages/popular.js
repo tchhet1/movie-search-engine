@@ -5,7 +5,6 @@ import { GrPrevious } from 'react-icons/gr';
 
 function Popular() {
 
-
     return (
         <div className="popular-movies-container">
             <div className="heading">

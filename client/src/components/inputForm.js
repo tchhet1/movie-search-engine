@@ -19,11 +19,12 @@ function InputForm({submitHandler}){
         if(!input) {
             alert('Please enter a movie name');
         } else {
+            
             Axios.get(url)
-        .then((res) => {
-        //submitHandler function is in parent component which will receive the data and set it to the variable
-        submitHandler(res.data.results);
-        })
+                .then((res) => {
+                //submitHandler function is in parent component which will receive the data and set it to the variable
+                submitHandler(res.data.results);
+            })
         }
         
         

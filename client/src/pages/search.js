@@ -13,12 +13,22 @@ function Search() {
 
     //this is coming from hero.js page HOME page
    
-    //console.log(location.state);
+    console.log(location.state);
 
+    let homepageData = [];
    
-   //let homepageData = [...location.state.movieData];
+    if(location.state){
+       homepageData = [...location.state.movieData];
+    }
+   
     
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(
+        [...homepageData]
+     );
+
+     window.history.replaceState({}, document.title);
+
+     //window.onload
 
    // if(location.state){
       //homepageData = [...location.state.movieData];
@@ -33,9 +43,13 @@ function Search() {
     const posterUrl = 'https://image.tmdb.org/t/p/original';
     
     const submitHandler = (data) => {
-        //e.preventDefault();
-            setData(data);         
+            setData(data);   
+            homepageData = []; 
+            window.history.replaceState({}, document.title);    
     }
+
+
+   
        
     return (
         <div>

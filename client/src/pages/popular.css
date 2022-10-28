@@ -16,6 +16,7 @@
     border: 2px solid #3A445C;
     border-radius: 15px;
     padding-bottom: 5px;
+    width: 200px;
 }
 
 .popular-movies-container .movie .movie-title {
@@ -25,5 +26,10 @@
 .popular-movies-container .movie .movie-releaseDate {
         text-align: center;
     }
+
+.popular-movies-container .movie-image img {
+        border-radius: 14px;
+       
+}
 
 

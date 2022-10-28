@@ -6,12 +6,9 @@ function Movies(props) {
 
     const imageUrl = props.url.concat(props.image);
     const imageUnavailable = "http://localhost:3000/static/media/movies-collage.ad1077861c300af9991b.webp";
-    const [isHovering, setIsHovering] = useState(false);
+   
 
-    const handleMouseOver = ((e) => {
-        setIsHovering(true);
-    });
-
+   
        
     return (
               

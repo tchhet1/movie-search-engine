@@ -17,11 +17,6 @@
     width: 200px;
 }
 
-.new-movies-container .new-movies .movie:hover {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-}
 
 .new-movies-container .movie .movie-title {
 text-align: center;
@@ -33,15 +28,8 @@ text-align: center;
 
 .new-movies-container .movie-image img {
     border-radius: 14px;
-    transition: all 1s;
+   
 }
 
-
-
-.new-movies-slider {
-    max-width: 100%;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-}
 
 

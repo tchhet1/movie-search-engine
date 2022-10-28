@@ -8,6 +8,7 @@ import InputForm from './inputForm'
 function Hero(){
    
   const posterUrl = 'https://image.tmdb.org/t/p/original';
+  
   const [movieData, setMovieData] = useState([]);
 
 
